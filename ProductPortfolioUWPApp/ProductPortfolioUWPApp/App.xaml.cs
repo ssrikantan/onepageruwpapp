@@ -38,7 +38,7 @@ namespace ProductPortfolioUWPApp
         //   public static Microsoft.ApplicationInsights.TelemetryClient TelemetryClient;
 
         public static MobileServiceClient MobileService = new MobileServiceClient(
-              "https://productportfolioazuremobileapp20160430120128.azurewebsites.net"
+              "[].azurewebsites.net"
           );
 
         // The Event that would be thrown to indicate Network status changes
