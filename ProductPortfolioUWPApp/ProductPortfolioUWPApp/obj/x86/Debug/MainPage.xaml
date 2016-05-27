@@ -1,0 +1,399 @@
+﻿<Page
+    x:Class="ProductPortfolioUWPApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProductPortfolioUWPApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="Standard310x260ItemTemplate">
+            <Grid Height="360" Width="480" Margin="2,2,2,2">
+                <Border  BorderBrush="Gray" Background="White" BorderThickness="0.3">
+                    <Image Source="{Binding ImageUrl}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+                </Border>
+                <StackPanel Margin="0,10,0,0" VerticalAlignment="Bottom">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Subject}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap" 
+                                   Foreground="Black" Margin="10,0,0,0" TextTrimming="CharacterEllipsis" MaxWidth="230"/>
+                    </StackPanel>
+                    <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" MaxHeight="60" Foreground="Gray"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="AnnouncementItemsTemplate">
+            <Grid Width="540" Height="360">
+                <Border  BorderBrush="Gray" Background="White" 
+                         BorderThickness="0.3">
+                    <Image Source="{Binding ImageUrl}" Stretch="UniformToFill" Height="Auto"
+                                       AutomationProperties.Name="{Binding Title}"/>
+                </Border>
+                <StackPanel VerticalAlignment="Bottom" Background="Gray" Opacity="0.8" Height="100">
+                    <TextBlock Text="{Binding Subject}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap" 
+                            Foreground="White"  Margin="20,0,20,10"  TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
+                                        Foreground="White" TextWrapping="Wrap"  Margin="20,0,20,10"
+                                        TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="ProductsInPreviewItemTemplate">
+            <Grid Width="Auto" Height="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Foreground="Black" TextWrapping="Wrap" 
+                           TextTrimming="CharacterEllipsis" FontSize="24" FontWeight="Light">
+                    <Run Text="{Binding ProductName}"></Run><Run Text=" "></Run><Run Text="{Binding CurrentVersion}"></Run>
+                </TextBlock>
+                <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="0.75" >
+                    <Image Source="{Binding ImageUrl_Full}"
+                              ></Image>
+                </Border>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="ProductsInPreviewItemTemplateNarrow">
+            <Grid Width="260" Height="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Foreground="Black" TextWrapping="Wrap" Margin="0,0,0,5"
+                           TextTrimming="CharacterEllipsis" FontSize="16" FontWeight="Light">
+                    <Run Text="{Binding ProductName}"></Run><Run Text=" "></Run><Run Text="{Binding CurrentVersion}"></Run>
+                </TextBlock>
+                <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="0.75" >
+                    <Image Source="{Binding ImageUrl_Full}" Width="260" Height="126"></Image>
+                </Border>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="FeatureUpdatesItemTemplate">
+            <Grid Width="160" MinHeight="260">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="160"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock  Margin="0,0,10,0" Foreground="Black" TextWrapping="Wrap" Grid.Row="1"
+                           TextTrimming="CharacterEllipsis" FontSize="24" FontWeight="Light">
+                    <Run Text="{Binding ProductName}"></Run>
+                </TextBlock>
+                <Border BorderBrush="LightGray" BorderThickness="0.75" Background="Gray">
+                    <Image Source="{Binding ImageUrl_Full}" Height="160" Width="160"
+                               Stretch="UniformToFill" ></Image>
+                </Border>
+                <TextBlock  Text="{Binding FeatureName}" MaxHeight="60"
+                               Margin="0,0,10,0" Foreground="Black" TextWrapping="Wrap" Grid.Row="2"
+                           TextTrimming="CharacterEllipsis" FontSize="14" FontWeight="Light"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="FeatureUpdatesItemTemplateNarrow">
+            <Grid Width="130" Height="200" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border BorderBrush="LightGray" BorderThickness="0.75"  Background="Gray">
+                    <Image Source="{Binding ImageUrl_Full}" Stretch="UniformToFill" ></Image>
+                </Border>
+                <TextBlock  Margin="0,0,10,0" Foreground="Black" TextWrapping="Wrap" Grid.Row="1"
+                           TextTrimming="CharacterEllipsis" FontSize="16" FontWeight="Normal" MaxHeight="60">
+                    <Run Text="{Binding ProductName}"></Run>
+                </TextBlock>
+                <TextBlock  Text="{Binding FeatureName}" MaxHeight="60"
+                               Margin="0,0,10,0" Foreground="Black" TextWrapping="Wrap" Grid.Row="2"
+                           TextTrimming="CharacterEllipsis" FontSize="14" FontWeight="Light"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid Background="WhiteSmoke">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='1' x:Name="AdaptiveStates"                                                          >
+                <VisualState x:ConnectionId='2' x:Name="DefaultState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ProductsInPreviewHub2.Visibility" Value="Collapsed"/>
+                        <Setter Target="ProductsInPreviewHub.Visibility" Value="Visible"/>
+                        <Setter Target="FeatureUpdatesHubNarrow.Visibility" Value="Collapsed"/>
+                        <Setter Target="FeatureUpdatesHub.Visibility" Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='3' x:Name="PhoneState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="AnnouncementsPanel.Visibility" Value="Visible"/>
+                        <Setter Target="AnnouncementsGrid.Visibility" Value="Collapsed"/>
+                        <Setter Target="ProductsInPreviewHub2.Visibility" Value="Visible"/>
+                        <Setter Target="ProductsInPreviewHub.Visibility" Value="Collapsed"/>
+                        <Setter Target="FeatureUpdatesHubNarrow.Visibility" Value="Visible"/>
+                        <Setter Target="FeatureUpdatesHub.Visibility" Value="Collapsed"/>
+                        <Setter Target="TabbedMenuPanel.Margin" Value="2"/>
+                        <Setter Target="Separator.(RelativePanel.Below)" Value="ProductsInPreviewHub2"/>
+                        <Setter Target="Separator.Margin" Value="2"/>
+                        <Setter Target="Separator2.(RelativePanel.Below)" Value="FeatureUpdatesHubNarrow"/>
+                        <Setter Target="Separator2.Margin" Value="2"/>
+                        <Setter Target="ProgressRingCtrl.Width" Value="80"/>
+                        <Setter Target="ProgressRingCtrl.Height" Value="80"/>
+                        <Setter Target="DownloadsPanel.Orientation" Value="Vertical"/>
+                        <Setter Target="DownloadsGrid.Margin" Value="10"/>
+                        <Setter Target="PosterPanel2.Margin" Value="0,20,10,10"/>
+                        <Setter Target="PosterTextBlock.FontSize" Value="22"/>
+                        <Setter Target="PosterTextBlock.Margin" Value="0,0,0,-20"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ProgressRing x:ConnectionId='4' Name="ProgressRingCtrl" Foreground="Blue" Width="100" Height="100" IsActive="False" 
+                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel x:ConnectionId='5' Name="InternetConnectionStatusPanel" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Orientation="Vertical" Visibility="Collapsed" Height="Auto">
+            <Image Source="ms-appx:///Assets/Symbol_Offline.png" Width="147" Height="147" />
+            <TextBlock x:ConnectionId='44' Name="ErrorTextBlock" HorizontalAlignment="Center" Foreground="Red" FontSize="20" Margin="0,20,0,0"
+                   Style="{StaticResource SubheaderTextBlockStyle}" Visibility="Collapsed" Text="You are not connected to the internet!"/>
+        </StackPanel>
+        <RelativePanel x:ConnectionId='6' Name="MainRelativePanel">
+            <StackPanel x:ConnectionId='7' Orientation="Horizontal" Height="40" 
+                                Margin="20,0,10,10" Name="TabbedMenuPanel"
+                                VerticalAlignment="Top">
+                <TextBlock x:ConnectionId='42' Name ="HomeTextBlock" Margin="10,10,0,0"  FontWeight="Medium"
+                                                  >Home</TextBlock>
+                <TextBlock x:ConnectionId='43' Name ="CatalogViewTextBlock" Margin="20,10,0,0" 
+                                                  >Catalog</TextBlock>
+            </StackPanel>
+            <StackPanel x:ConnectionId='8' Name="SettingsPanel" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Top"
+                        HorizontalAlignment="Right" Margin="0,0,10,10" >
+                <Button x:ConnectionId='39' Name ="About" Margin="20,4,0,0" Content="About" Background="WhiteSmoke">
+                    <Button.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem x:ConnectionId='40' Text="Privacy Policy"                            />
+                            <MenuFlyoutSeparator/>
+                            <MenuFlyoutItem x:ConnectionId='41' Text="Disclaimer"                         />
+                        </MenuFlyout>
+                    </Button.Flyout>
+
+                </Button>
+            </StackPanel>
+            <GridView x:ConnectionId='9' Name="RootGridView" RelativePanel.Below="TabbedMenuPanel" 
+                      ItemContainerStyle="{StaticResource GridViewItemStylePlain}">
+                <RelativePanel x:ConnectionId='10' RelativePanel.Below="TabbedMenuPanel" Name="AnnouncementRPanel" >
+                    <Grid x:ConnectionId='11' Name="AnnouncementsGrid" Height="370" Margin="0,0,-5,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="33*" />
+                            <ColumnDefinition Width="33*"/>
+                            <ColumnDefinition Width="33*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid x:ConnectionId='36' Name="Announcement1"                              >
+                            <Border  BorderBrush="Gray" Background="White" 
+                         BorderThickness="0.3">
+                                <Image Source="{Binding ImageUrl}" Stretch="UniformToFill" Height="Auto"
+                                       AutomationProperties.Name="{Binding Title}"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Bottom" Background="Gray" Opacity="0.8" Height="100">
+                                <TextBlock Text="{Binding Subject}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap" 
+                            Foreground="White"  Margin="20,0,20,10"  TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
+                                        Foreground="White" TextWrapping="WrapWholeWords"  Margin="20,0,20,10"
+                                        TextTrimming="CharacterEllipsis" MaxHeight="40"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid x:ConnectionId='37' Name="Announcement2" Grid.Column="1"                              >
+                            <Border  BorderBrush="Gray" Background="White" 
+                         BorderThickness="0.3">
+                                <Image Source="{Binding ImageUrl}" Stretch="UniformToFill" Height="Auto"
+                                       AutomationProperties.Name="{Binding Title}"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Bottom" Background="Gray" Opacity="0.8" Height="100">
+                                <TextBlock Text="{Binding Subject}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap" 
+                            Foreground="White"  Margin="20,0,20,10"  TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
+                                        Foreground="White" TextWrapping="Wrap"  Margin="20,0,20,10"
+                                        TextTrimming="CharacterEllipsis" MaxHeight="40"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid x:ConnectionId='38' Name="Announcement3" Grid.Column="2"                              >
+                            <Border  BorderBrush="Gray" Background="White" 
+                         BorderThickness="0.3">
+                                <Image Source="{Binding ImageUrl}" Stretch="UniformToFill" Height="Auto"
+                                       AutomationProperties.Name="{Binding Title}"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Bottom" Background="Gray" Opacity="0.8" Height="100">
+                                <TextBlock Text="{Binding Subject}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap" 
+                            Foreground="White"  Margin="20,0,20,10"  TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
+                                        Foreground="White" TextWrapping="Wrap"  Margin="20,0,20,10"
+                                        TextTrimming="CharacterEllipsis" MaxHeight="40"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                    <StackPanel x:ConnectionId='12' Name="AnnouncementsPanel" Visibility="Collapsed" Orientation="Vertical" Margin="0,0,-2,0">
+                        <Grid x:ConnectionId='33' Name="Announcement1_Phone" Margin="2,2,2,0"                               >
+                            <Border  BorderBrush="Gray" Background="White" 
+                         BorderThickness="0.3">
+                                <Image Source="{Binding ImageUrl}" Stretch="UniformToFill" Height="160"
+                                       AutomationProperties.Name="{Binding Title}"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Bottom" Background="Gray" Opacity="0.8" Height="30">
+                                <TextBlock Text="{Binding Subject}" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="NoWrap" 
+                            Foreground="White"  Margin="20,0,20,10"  TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
+                                        Foreground="White" TextWrapping="WrapWholeWords"  Margin="20,0,20,10"
+                                        TextTrimming="CharacterEllipsis" MaxHeight="20"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid x:ConnectionId='34' Name="Announcement2_Phone" Margin="2,2,2,0"                               >
+                            <Border  BorderBrush="Gray" Background="White" 
+                         BorderThickness="0.3">
+                                <Image Source="{Binding ImageUrl}" Stretch="UniformToFill" Height="160"
+                                       AutomationProperties.Name="{Binding Title}"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Bottom" Background="Gray" Opacity="0.8" Height="30">
+                                <TextBlock Text="{Binding Subject}" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="NoWrap" 
+                            Foreground="White"  Margin="20,0,20,10"  TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
+                                        Foreground="White" TextWrapping="WrapWholeWords"  Margin="20,0,20,10"
+                                        TextTrimming="CharacterEllipsis" MaxHeight="20"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid x:ConnectionId='35' Name="Announcement3_Phone" Margin="2"                               >
+                            <Border  BorderBrush="Gray" Background="White" 
+                              BorderThickness="0.3">
+                                <Image Source="{Binding ImageUrl}" Stretch="UniformToFill" Height="160"
+                                       AutomationProperties.Name="{Binding Title}"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Bottom" Background="Gray" Opacity="0.8" Height="30">
+                                <TextBlock Text="{Binding Subject}" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="NoWrap" 
+                            Foreground="White"  Margin="20,0,20,10"  TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
+                                        Foreground="White" TextWrapping="WrapWholeWords"  Margin="20,0,20,10"
+                                        TextTrimming="CharacterEllipsis" MaxHeight="20"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    <Hub x:ConnectionId='13' x:Name="ProductsInPreviewHub" RelativePanel.Below="AnnouncementsGrid" Margin="30,20,20,20">
+                        <Hub.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Foreground="Green" Text="Products In Preview" Margin="-10,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </Hub.HeaderTemplate>
+                        <HubSection x:ConnectionId='31' Name="BlogFeedsHubSection">
+                            <DataTemplate>
+                                <GridView x:ConnectionId='32' Name="GridViewPreviewItems" IsItemClickEnabled="True" Margin="-10,0,0,0"
+                                          ItemTemplate="{StaticResource ProductsInPreviewItemTemplate}" 
+                                                                                    >
+                                    <GridView.ItemContainerStyle>
+                                        <Style  TargetType="GridViewItem">
+                                            <Setter
+                                    Property="Margin"
+                                    Value="0,10,10,10" />
+                                        </Style>
+                                    </GridView.ItemContainerStyle>
+                                </GridView>
+                            </DataTemplate>
+                        </HubSection>
+                    </Hub>
+                    <Hub x:ConnectionId='14' x:Name="ProductsInPreviewHub2" RelativePanel.Below="AnnouncementsPanel" Visibility="Collapsed">
+                        <Hub.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Foreground="Green" Text="Products In Preview" FontSize="22" Margin="-4,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </Hub.HeaderTemplate>
+                        <HubSection x:ConnectionId='29' Name="ProductsInPreviewHubSection2">
+                            <DataTemplate>
+                                <GridView x:ConnectionId='30' Name="GridViewPreviewItems" IsItemClickEnabled="True" Margin="-10,0,0,0"
+                                          ItemTemplate="{StaticResource ProductsInPreviewItemTemplateNarrow}" 
+                                                                                    >
+                                    <GridView.ItemContainerStyle>
+                                        <Style  TargetType="GridViewItem">
+                                            <Setter
+                                    Property="Margin"
+                                    Value="5" />
+                                        </Style>
+                                    </GridView.ItemContainerStyle>
+                                </GridView>
+                            </DataTemplate>
+                        </HubSection>
+                    </Hub>
+                    <Line x:ConnectionId='15' Name="Separator" Stroke="DarkGray" StrokeThickness="1" Stretch="UniformToFill" 
+                          X1="20" X2="450" Y1="0" Y2="0" 
+                          RelativePanel.Below="ProductsInPreviewHub" Margin="30,20,20,20"></Line>
+                    <Hub x:ConnectionId='16' x:Name="FeatureUpdatesHub" RelativePanel.Below="ProductsInPreviewHub" Margin="30,20,20,20"
+                         Height="320">
+                        <Hub.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Foreground="Green" Text="Feature Updates" Margin="-10,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </Hub.HeaderTemplate>
+                        <HubSection x:ConnectionId='27' Name="BlogFeedsHubSection1" Margin="-10,0,0,0">
+                            <DataTemplate>
+                                <GridView x:ConnectionId='28' Name="GridViewFeatureUpdateItems"  IsItemClickEnabled="True" 
+                                           ItemTemplate="{StaticResource FeatureUpdatesItemTemplate}" 
+                                                                                           >
+                                    <GridView.ItemContainerStyle>
+                                        <Style  TargetType="GridViewItem">
+                                            <Setter
+                                    Property="Margin"
+                                    Value="0,10,10,0" />
+                                        </Style>
+                                    </GridView.ItemContainerStyle>
+                                </GridView>
+                            </DataTemplate>
+                        </HubSection>
+                    </Hub>
+                    <Hub x:ConnectionId='17' x:Name="FeatureUpdatesHubNarrow" RelativePanel.Below="ProductsInPreviewHub2" Visibility="Collapsed">
+                        <Hub.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Foreground="Green" FontSize="22" Text="Feature Updates" Margin="-4,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </Hub.HeaderTemplate>
+                        <HubSection x:ConnectionId='25' Name="FeatureUpdatesHubSection1">
+                            <DataTemplate>
+                                <GridView x:ConnectionId='26'  IsItemClickEnabled="True" 
+                                          Margin="-10,0,0,0"  ItemTemplate="{StaticResource FeatureUpdatesItemTemplateNarrow}" 
+                                                                                           >
+                                    <GridView.ItemContainerStyle>
+                                        <Style  TargetType="GridViewItem">
+                                            <Setter
+                                    Property="Margin"
+                                    Value="5" />
+                                        </Style>
+                                    </GridView.ItemContainerStyle>
+                                </GridView>
+                            </DataTemplate>
+                        </HubSection>
+                    </Hub>
+                    <Line x:ConnectionId='18' Name="Separator2" Stroke="DarkGray" StrokeThickness="1" Stretch="UniformToFill" 
+                          X1="20" X2="450" Y1="0" Y2="0" 
+                          RelativePanel.Below="FeatureUpdatesHub" Margin="30,20,20,20"></Line>
+                    <Grid x:ConnectionId='19' Height="Auto" Margin="30,0,0,20" RelativePanel.Below="Separator2" Name="DownloadsGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:ConnectionId='20' Text="Downloadable Posters" Foreground="Green" Name="PosterTextBlock"
+                                   Style="{StaticResource SubheaderTextBlockStyle}" Height="60" Margin="0,0,0,20"></TextBlock>
+                        <StackPanel x:ConnectionId='21' Orientation="Horizontal" Name="DownloadsPanel" Grid.Row="1">
+                            <StackPanel>
+                                <Image x:ConnectionId='24' Source="ms-appx:///Assets/Icon_AllProducts.png" MaxWidth="240"  
+                                       Stretch="UniformToFill"                       HorizontalAlignment="Left"/>
+                                <TextBlock Text="Poster- All Products"></TextBlock>
+                            </StackPanel>
+                            <StackPanel x:ConnectionId='22' Margin="20,0,0,0" Name="PosterPanel2">
+                                <Image x:ConnectionId='23' Source="ms-appx:///Assets/Icon_AzureServices.png" MaxWidth="240" 
+                                      HorizontalAlignment="Left" Stretch="UniformToFill"                        />
+                                <TextBlock Text="Poster- Azure Services"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </RelativePanel>
+            </GridView>
+        </RelativePanel>
+    </Grid>
+</Page>
+

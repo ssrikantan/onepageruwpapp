@@ -1,0 +1,435 @@
+﻿<Page
+    x:Class="ProductPortfolioUWPApp.ProductPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProductPortfolioUWPApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:common="using:ProductPortfolioUWPApp.Common"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="Portfolio_Custom_500x130ItemTemplate">
+            <Grid  Background="White" MaxWidth="480" Height="280">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition  Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <!-- Content is allowed to flow across as many columns as needed -->
+                <RichTextBlock x:Name="richTextBlock" TextAlignment="Left"
+                               OverflowContentTarget="{Binding ElementName=firstOverflowContainer}" 
+                                Style="{StaticResource ItemRichTextStyle}" VerticalAlignment="Top"
+                                IsTextSelectionEnabled="False" TextWrapping="Wrap" 
+                               Foreground="Gray" Margin="5" MinWidth="180">
+                    <Paragraph LineStackingStrategy="MaxHeight" Margin="10,10,10,10">
+                        <InlineUIContainer>
+                            <StackPanel Orientation="Vertical" >
+                                <TextBlock Text="{Binding FeatureName}" Foreground="Gray" FontSize="18"  
+                                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"></TextBlock>
+                            </StackPanel>
+                        </InlineUIContainer>
+                        <LineBreak/>
+                    </Paragraph>
+                    <Paragraph  LineStackingStrategy="MaxHeight" 
+                                Margin="10,10,10,10" TextAlignment="Left">
+                        <InlineUIContainer>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                <Image Source="{Binding ImageUrl_Full}" Stretch="Fill" 
+                                       HorizontalAlignment="Left" MaxWidth="90"/>
+                            </StackPanel>
+                        </InlineUIContainer>
+                        <Run FontWeight="Normal" Text="{Binding FeatureDescription}" 
+                             Foreground="Black" FontSize="15" />
+                    </Paragraph>
+                </RichTextBlock>
+                <RichTextBlockOverflow x:Name="firstOverflowContainer" MinWidth="225"
+                        Grid.Column="1" Margin="0,10,10,10"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="Portfolio_Custom_500x130ItemTemplateNarrow">
+            <Grid Height="280">
+                <!-- Content is allowed to flow across as many columns as needed -->
+                <RichTextBlock x:Name="richTextBlock" TextAlignment="Left" 
+                                Style="{StaticResource ItemRichTextStyle}" VerticalAlignment="Top"
+                                IsTextSelectionEnabled="False" TextWrapping="Wrap" 
+                               Foreground="Gray" Margin="5">
+                    <Paragraph LineStackingStrategy="MaxHeight" Margin="10,10,10,10">
+                        <InlineUIContainer>
+                            <StackPanel Orientation="Vertical" >
+                                <TextBlock Text="{Binding FeatureName}" Foreground="Gray" FontSize="18"  
+                                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"></TextBlock>
+                            </StackPanel>
+                        </InlineUIContainer>
+                        <LineBreak/>
+                    </Paragraph>
+                    <Paragraph  LineStackingStrategy="MaxHeight" 
+                                Margin="10,10,10,10" TextAlignment="Left">
+                        <InlineUIContainer>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                <Image Source="{Binding ImageUrl_Full}" Stretch="Fill" 
+                                       HorizontalAlignment="Left" MaxWidth="90"/>
+                            </StackPanel>
+                        </InlineUIContainer>
+                        <Run FontWeight="Normal" Text="{Binding FeatureDescription}" 
+                             Foreground="Black" FontSize="15" />
+                    </Paragraph>
+                </RichTextBlock>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="Portfolio_Custom_500x130ItemTemplateMedium">
+            <Grid  MaxWidth="420" Height="280">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition  Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <!-- Content is allowed to flow across as many columns as needed -->
+                <RichTextBlock x:Name="richTextBlock" TextAlignment="Left"
+                               OverflowContentTarget="{Binding ElementName=firstOverflowContainer}" 
+                                Style="{StaticResource ItemRichTextStyle}" VerticalAlignment="Top"
+                                IsTextSelectionEnabled="False" TextWrapping="Wrap" 
+                               Foreground="Gray" Margin="5" MinWidth="180">
+                    <Paragraph LineStackingStrategy="MaxHeight" Margin="10,10,10,10">
+                        <InlineUIContainer>
+                            <StackPanel Orientation="Vertical" >
+                                <TextBlock Text="{Binding FeatureName}" Foreground="Gray" FontSize="18"  
+                                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"></TextBlock>
+                            </StackPanel>
+                        </InlineUIContainer>
+                        <LineBreak/>
+                    </Paragraph>
+                    <Paragraph  LineStackingStrategy="MaxHeight" 
+                                Margin="10,10,10,10" TextAlignment="Left">
+                        <InlineUIContainer>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                <Image Source="{Binding ImageUrl_Full}" Stretch="Fill" 
+                                       HorizontalAlignment="Left" MaxWidth="90"/>
+
+                            </StackPanel>
+                        </InlineUIContainer>
+                        <Run FontWeight="Normal" Text="{Binding FeatureDescription}" 
+                             Foreground="Black" FontSize="15" />
+                    </Paragraph>
+                </RichTextBlock>
+                <RichTextBlockOverflow x:Name="firstOverflowContainer" MinWidth="225"
+                        Grid.Column="1" Margin="0,10,10,10"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="BlogFeedsItemTemplate">
+            <Grid Width="310" MinHeight="200" Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="60"/>
+                    <RowDefinition MaxHeight="40"/>
+                    <RowDefinition MaxHeight="40"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding Title}" 
+                               Margin="10,10,10,10" Foreground="White" TextWrapping="Wrap" 
+                           TextTrimming="CharacterEllipsis" FontSize="24" FontWeight="Light"></TextBlock>
+                <TextBlock Text="{Binding Author}" Style="{StaticResource BodyTextBlockStyle}"
+                               Margin="10" Foreground="DarkBlue" Grid.Row="1"></TextBlock>
+                <TextBlock Text="{Binding PubDate}" Style="{StaticResource BodyTextBlockStyle}" Grid.Row="2"
+                               TextWrapping="Wrap" Foreground="White" Margin="10" TextTrimming="WordEllipsis"></TextBlock>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="BlogFeedsItemTemplateNarrow">
+            <Grid Width="220" Height="Auto" Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="60"/>
+                    <RowDefinition MaxHeight="40"/>
+                    <RowDefinition MaxHeight="40"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding Title}" 
+                               Margin="5" Foreground="White" TextWrapping="Wrap" 
+                           TextTrimming="CharacterEllipsis" FontSize="20" FontWeight="Light"></TextBlock>
+                <TextBlock Text="{Binding Author}" Style="{StaticResource BodyTextBlockStyle}"
+                               Margin="5" Foreground="DarkBlue" Grid.Row="1"></TextBlock>
+                <TextBlock Text="{Binding PubDate}" Style="{StaticResource BodyTextBlockStyle}" Grid.Row="2"
+                               TextWrapping="Wrap" Foreground="White" Margin="5" TextTrimming="WordEllipsis"></TextBlock>
+            </Grid>
+        </DataTemplate>
+        <Style x:Name="ProductFeaturesGridViewItemStyle"
+                TargetType="GridViewItem">
+            <Setter
+                Property="BorderBrush"
+                Value="DarkGray" />
+            <Setter
+                Property="HorizontalAlignment"
+                Value="Left" />
+            <Setter
+                Property="VerticalAlignment"
+                Value="Top" />
+            <!--<Setter
+                Property="Background"
+                Value="White" />-->
+            <Setter
+                Property="Margin"
+                Value="10" />
+        </Style>
+        <Style x:Name="ProductFeaturesGridViewItemStyleMedium"
+                TargetType="GridViewItem">
+            <Setter
+                Property="BorderBrush"
+                Value="DarkGray" />
+            <Setter
+                Property="HorizontalAlignment"
+                Value="Left" />
+            <Setter
+                Property="VerticalAlignment"
+                Value="Top" />
+            <!--<Setter
+                Property="Background"
+                Value="White" />-->
+            <Setter
+                Property="Margin"
+                Value="5" />
+        </Style>
+        <Style x:Name="ProductFeaturesGridViewItemStylePhone"
+               TargetType="GridViewItem">
+            <Setter
+                Property="BorderBrush"
+                Value="Black" />
+            <Setter
+                Property="Background"
+                Value="White" />
+            <Setter
+                Property="Margin"
+                Value="2" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="WhiteSmoke">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveStates" CurrentStateChanged="AdaptiveStates_CurrentStateChanged" >
+                <VisualState x:Name="DefaultState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="PhoneState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TabbedMenuPanel.Margin" Value="2,0,2,0" />
+                        <Setter Target="NavigationLinksPanel.Orientation" Value="Vertical" />
+                        <Setter Target="NavigationLinksGrid.Height" Value="Auto"/>
+                        <Setter Target="ProductGridMain.Height" Value="Auto" />
+                        <Setter Target="FeatureListingGridView.ItemTemplate" Value="{StaticResource Portfolio_Custom_500x130ItemTemplateNarrow}"/>
+                        <Setter Target="ProductImageBorderN.HorizontalAlignment" Value="Left"/>
+                        <Setter Target="ProductGridMain.Visibility" Value="Collapsed"/>
+                        <Setter Target="ProductGridMainNarrow.Visibility" Value="Visible"/>
+                        <Setter Target="FeatureListingGridView.(RelativePanel.Below)" Value="ProductGridMainNarrow"/>
+                        <Setter Target="SplitViewRPanel.Margin" Value="2"/>
+                        <Setter Target="FeatureListingGridView.ItemContainerStyle" Value="{StaticResource ProductFeaturesGridViewItemStylePhone}"/>
+                        <Setter Target="FeatureListingGridView.Margin" Value="2"/>
+                        <Setter Target="BlogPostsHub.Visibility" Value="Collapsed"/>
+                        <Setter Target="BlogPostsHubNarrow.Visibility" Value="Visible"/>
+                        <Setter Target="Separator4.(RelativePanel.Below)" Value="BlogPostsHubNarrow"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="450" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="NavigationLinksPanel.Orientation" Value="Vertical" />
+                        <Setter Target="NavigationLinksGrid.Height" Value="Auto"/>
+                        <Setter Target="ProductGridMain.Visibility" Value="Collapsed"/>
+                        <Setter Target="ProductGridMainNarrow.Visibility" Value="Visible"/>
+                        <Setter Target="SplitViewRPanel.Margin" Value="10"/>
+                        <Setter Target="FeatureListingGridView.ItemContainerStyle" Value="{StaticResource ProductFeaturesGridViewItemStyleMedium}"/>
+                        <Setter Target="FeatureListingGridView.Margin" Value="0"/>
+                        <Setter Target="FeatureListingGridView.(RelativePanel.Below)" Value="ProductGridMainNarrow"/>
+                        <Setter Target="TabbedMenuPanel.Margin" Value="2"/>
+                        <Setter Target="BlogPostsHub.Visibility" Value="Collapsed"/>
+                        <Setter Target="BlogPostsHubNarrow.Visibility" Value="Visible"/>
+                        <Setter Target="Separator4.(RelativePanel.Below)" Value="BlogPostsHubNarrow"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ProgressRing Name="ProgressRingCtrl" Foreground="Blue" Width="100" Height="100" IsActive="False" 
+                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Name="InternetConnectionStatusPanel" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Orientation="Vertical" Visibility="Collapsed" Height="Auto">
+            <Image Source="ms-appx:///Assets/Symbol_Offline.png" Width="147" Height="147" />
+            <TextBlock Name="ErrorTextBlock" HorizontalAlignment="Center" Foreground="Red" FontSize="20" Margin="0,20,0,0"
+                   Style="{StaticResource SubheaderTextBlockStyle}" Visibility="Collapsed" Text="You are not connected to the internet!"/>
+        </StackPanel>
+        <StackPanel Name="SettingsPanel" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Top"
+                        HorizontalAlignment="Right" Margin="0,0,10,10" >
+            <Button Name ="About" Margin="20,4,0,0" Content="About" Background="WhiteSmoke">
+                <Button.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Privacy Policy" Click="PrivacyPolicy_Click"/>
+                        <MenuFlyoutSeparator/>
+                        <MenuFlyoutItem Text="Disclaimer" Click="Disclaimer_Click"/>
+                    </MenuFlyout>
+                </Button.Flyout>
+
+            </Button>
+        </StackPanel>
+        <RelativePanel Name="MainRelativePanel">
+            <StackPanel Orientation="Horizontal" Height="40" 
+                                Margin="20,0,10,10" Name="TabbedMenuPanel"
+                                VerticalAlignment="Top">
+                <TextBlock Name ="HomeTextBlock" Margin="10,10,0,0" 
+                           Tapped="AppHome_Tapped">Home</TextBlock>
+                <TextBlock Name ="CatalogViewTextBlock" Margin="20,10,0,0" FontWeight="Medium">Catalog</TextBlock>
+            </StackPanel>
+            <GridView Name="RootGridView" RelativePanel.Below="TabbedMenuPanel" ItemContainerStyle="{StaticResource GridViewItemStylePlain}">
+                <RelativePanel Name="SplitViewRPanel" Margin="30,0,30,0">
+                    <Grid Name="ProductGridMain" Height="300">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="310"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="240" />
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Style="{StaticResource TitleTextBlockStyle}"  Name="ProductTitleTextBlock"
+                               Foreground="Black" MaxWidth="350" TextTrimming="WordEllipsis" VerticalAlignment="Top" MaxHeight="80">
+                     <Run Text="{Binding ProductName}"/>  <Run Text=" "/><Run Text="{Binding CurrentVersion}"/>
+                            </TextBlock>
+                            <TextBlock Name="PreviewFlagTxtBlock" Text="Preview !" Style="{StaticResource TitleTextBlockStyle}" 
+                                       Foreground="Green" FontStyle="Italic" Visibility="Collapsed"></TextBlock>
+                            <Border BorderBrush="LightGray"
+                                Margin="0,10,0,10" BorderThickness="1" Name="ProductImageBorder">
+                                <Image  Stretch="UniformToFill" Source="{Binding ImageUrl_Full}" 
+                                Name="ProductLogo" Tapped="HomePageImage_Tapped" 
+                                Width="310" Height="150"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Grid.RowSpan="2" Name="ProductDescriptionPanel1">
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Foreground="Black" 
+                               TextWrapping="Wrap" Margin="30,20,0,20" Name="ProductDescriptionTextBlock"
+                                x:Uid="LongText" Text="{Binding ProductDescription}" Height="260"
+                               VerticalAlignment="Top" TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Name="ProductGridMainNarrow" Margin="2,0,2,20" Visibility="Collapsed" HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Margin="0,10,0,10" Name="ProductTitleTextBlockN"
+                               Foreground="Black" TextTrimming="WordEllipsis">
+                               <Run Text="{Binding ProductName}"/>  <Run Text=" "/>
+                               <Run Text="{Binding CurrentVersion}"/>
+                            </TextBlock>
+                            <TextBlock Name="PreviewFlagTxtBlockNarrow" Text="Preview !" Style="{StaticResource TitleTextBlockStyle}" 
+                                       Foreground="Green" FontStyle="Italic" Visibility="Collapsed"></TextBlock>
+                            <Border BorderBrush="LightGray" Width="300" HorizontalAlignment="Left"
+                               BorderThickness="1" Name="ProductImageBorderN">
+                                <Image  Stretch="UniformToFill" Source="{Binding ImageUrl_Full}" 
+                                Name="ProductLogon" Tapped="HomePageImage_Tapped" 
+                                Width="300" Height="Auto"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Name="ProductDescriptionPanelN">
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Foreground="Black" 
+                               TextWrapping="Wrap" Margin="0,20,0,20" Name="ProductDescriptionTextBlockN"
+                                x:Uid="LongText" Text="{Binding ProductDescription}" Height="Auto"
+                               VerticalAlignment="Top" TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+                    </Grid>
+                    <GridView ItemTemplate="{StaticResource Portfolio_Custom_500x130ItemTemplate}" 
+                      Name="FeatureListingGridView" IsItemClickEnabled="True" ItemClick="FeatureListingGridView_ItemClick"
+                      Margin="-10,0,-10,20" RelativePanel.Below="ProductGridMain" 
+                              ItemContainerStyle="{StaticResource ProductFeaturesGridViewItemStyle}">
+                    </GridView>
+                    <Line Name="Separator3" Stroke="DarkGray" StrokeThickness="1" Stretch="UniformToFill" 
+                          X1="20" X2="450" Y1="0" Y2="0" 
+                          RelativePanel.Below="FeatureListingGridView" Margin="0,20,0,20"></Line>
+                    <Hub x:Name="BlogPostsHub" RelativePanel.Below="Separator3" Margin="0,0,0,20"
+                         Height="320">
+                        <Hub.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Foreground="Black" Text="Blog Posts" Margin="-10,0,0,0"></TextBlock>
+                                    <ProgressRing Foreground="Black" IsActive="True" HorizontalAlignment="Left" Width="40" Height="40" Visibility="Visible"  Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Hub.HeaderTemplate>
+                        <HubSection Name="BlogFeedsHubSection">
+                            <DataTemplate>
+                                <GridView Name="GridViewBlogItems" IsItemClickEnabled="True"
+                                          ItemTemplate="{StaticResource BlogFeedsItemTemplate}" 
+                                          ItemClick="GridViewBlogItems_ItemClick" Margin="-20,0,-20,0">
+                                    <GridView.ItemContainerStyle>
+                                        <Style  TargetType="GridViewItem">
+                                            <Setter                                   Property="Background"
+                                    Value="CornflowerBlue" />
+                                            <Setter
+                                    Property="Margin"
+                                    Value="10" />
+                                        </Style>
+                                    </GridView.ItemContainerStyle>
+                                </GridView>
+                            </DataTemplate>
+                        </HubSection>
+                    </Hub>
+                    <Hub x:Name="BlogPostsHubNarrow" RelativePanel.Below="Separator3" Margin="0,0,0,20"
+                         Height="Auto" Visibility="Collapsed">
+                        <Hub.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Foreground="Black" Text="Blog Posts" Margin="-10,0,0,0"></TextBlock>
+                                    <ProgressRing Foreground="Black" IsActive="True" Height="40" Width="40" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Hub.HeaderTemplate>
+                        <HubSection Name="BlogFeedsHubSectionNarrow">
+                            <DataTemplate>
+                                <GridView Name="GridViewBlogItems" IsItemClickEnabled="True"
+                                          ItemTemplate="{StaticResource BlogFeedsItemTemplateNarrow}" 
+                                          ItemClick="GridViewBlogItems_ItemClick" Margin="-20,0,-20,0">
+                                    <GridView.ItemContainerStyle>
+                                        <Style  TargetType="GridViewItem">
+                                            <Setter
+                                    Property="Background"
+                                    Value="CornflowerBlue" />
+                                            <Setter
+                                    Property="Margin"
+                                    Value="5" />
+                                        </Style>
+                                    </GridView.ItemContainerStyle>
+                                </GridView>
+                            </DataTemplate>
+                        </HubSection>
+                    </Hub>
+                    <Line Name="Separator4" Stroke="DarkGray" StrokeThickness="1" 
+                          Stretch="UniformToFill" X1="0" X2="450" Y1="0" Y2="0" 
+                          RelativePanel.Below="BlogPostsHub" Margin="0,20,0,20"></Line>
+                    <Grid Name="NavigationLinksGrid" Margin="0,0,20,20" 
+                          RelativePanel.Below="Separator4" Height="80">
+                        <StackPanel Orientation="Horizontal" Name="NavigationLinksPanel"
+                                VerticalAlignment="Top">
+                            <StackPanel Name="InnerPanel1" Orientation="Horizontal">
+                                <Image Name ="MSDNLink" Margin="0,10,10,10" Tapped="MsdnLink_Tapped" 
+                                     Source="ms-appx:///Assets/ImageMSDN.png" MinWidth="70" 
+                                     Stretch="UniformToFill"></Image>
+                                <Image Name ="TechnetLink" Margin="10,10,10,10" 
+                                     Tapped="TechnetImage_Tapped" Source="ms-appx:///Assets/ImageTechnet.png" 
+                                     MinWidth="70" Stretch="UniformToFill"></Image>
+                            </StackPanel>
+                            <StackPanel Name="InnerPanel2" Orientation="Horizontal">
+                                <Image Name ="CaseStudiesLink" Margin="0,10,10,10" 
+                                     Tapped="CaseStudiesLink_Tapped" Source="ms-appx:///Assets/ImageCustomerStories.png" 
+                                     MinWidth="140" Stretch="UniformToFill"></Image>
+                            </StackPanel>
+                            <StackPanel Name="InnerPanel3" Orientation="Horizontal">
+                                <Image Name ="SupportLink" Margin="0,10,10,10" Tapped="SupportLink_Tapped" 
+                                       Source="ms-appx:///Assets/ImageSupport.png" MinWidth="70" 
+                                       Stretch="UniformToFill"></Image>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </RelativePanel>
+            </GridView>
+        </RelativePanel>
+    </Grid>
+
+</Page>

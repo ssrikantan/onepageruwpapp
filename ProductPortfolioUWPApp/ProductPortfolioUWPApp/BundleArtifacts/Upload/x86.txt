@@ -1,0 +1,2 @@
+MainPackage=C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\Upload\ProductPortfolioUWPApp_19.1.1.0_x86.appx
+SymbolPackage=C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\AppPackages\ProductPortfolioUWPApp_19.1.1.0\ProductPortfolioUWPApp_19.1.1.0_x86.appxsym

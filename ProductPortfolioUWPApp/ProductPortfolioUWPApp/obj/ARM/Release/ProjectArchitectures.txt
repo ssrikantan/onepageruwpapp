@@ -1,0 +1,1 @@
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp.csproj;arm

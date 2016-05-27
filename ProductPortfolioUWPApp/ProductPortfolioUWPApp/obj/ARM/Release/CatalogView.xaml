@@ -1,0 +1,220 @@
+﻿<Page
+    x:Class="ProductPortfolioUWPApp.CatalogView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProductPortfolioUWPApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="NarrowListItemTemplate">
+            <Grid Height="40">
+                <StackPanel Grid.Column="1" HorizontalAlignment="Left" 
+                            Margin="4,4,4,4">
+                    <TextBlock Text="{Binding CategoryName}" FontWeight="Light"
+                                Foreground="#FF2C3229" TextWrapping="Wrap" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="20">
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="ProductsListDefaultItemTemplate">
+            <Grid MaxHeight="290" MaxWidth="240" Background="White" BorderBrush="Silver" Width="Auto"
+                  BorderThickness="0.1" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding ImageUrl_Full}" Stretch="UniformToFill" 
+                       AutomationProperties.Name="{Binding Title}" Margin="2,2,2,2"/>
+                <StackPanel Grid.Row="1" Margin="10,10,10,10" Orientation="Vertical">
+                    <TextBlock Text="{Binding ProductName}" Style="{StaticResource TitleTextBlockStyle}" 
+                                TextWrapping="Wrap" 
+                                Foreground="Black" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding ProductDescription}" 
+                               Style="{StaticResource BodyTextBlockStyle}" MaxHeight="80" 
+                               Foreground="Gray" TextTrimming="WordEllipsis" FontWeight="Light"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="ProductsListNarrowItemTemplate">
+            <Grid Background="White" BorderBrush="Silver" Width="Auto"
+                  BorderThickness="0.1" Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding ImageUrl_Full}" Stretch="UniformToFill" 
+                       AutomationProperties.Name="{Binding Title}" Margin="2,2,2,2"/>
+                <StackPanel Grid.Row="1" Margin="10" Orientation="Vertical">
+                    <TextBlock Text="{Binding ProductName}" Style="{StaticResource TitleTextBlockStyle}" 
+                                TextWrapping="Wrap" MaxHeight="60"
+                                Foreground="Black" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding ProductDescription}" 
+                               Style="{StaticResource BodyTextBlockStyle}" MaxHeight="90" 
+                               Foreground="Gray" TextTrimming="CharacterEllipsis" FontWeight="Light"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="ProductsListMediumItemTemplate">
+            <Grid Background="White" BorderBrush="Silver" Width="Auto"
+                  BorderThickness="0.1" Margin="2" MaxWidth="233">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding ImageUrl_Full}" Stretch="UniformToFill" 
+                       AutomationProperties.Name="{Binding Title}" Margin="2,2,2,2"/>
+                <StackPanel Grid.Row="1" Margin="10" Orientation="Vertical">
+                    <TextBlock Text="{Binding ProductName}" Style="{StaticResource TitleTextBlockStyle}" 
+                                TextWrapping="Wrap" MaxHeight="60"
+                                Foreground="Black" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding ProductDescription}" 
+                               Style="{StaticResource BodyTextBlockStyle}" MaxHeight="90" 
+                               Foreground="Gray" TextTrimming="CharacterEllipsis" FontWeight="Light"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid x:ConnectionId='1' Background="WhiteSmoke" Name="RootGrid">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='2' x:Name="AdaptiveStates"                                                          >
+                <VisualState x:ConnectionId='3' x:Name="DefaultState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:ConnectionId='4' x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="CategoryList.Visibility" Value="Collapsed" />
+                        <Setter Target="FilterHeader.Visibility" Value="Collapsed" />
+                        <Setter Target="ClearSelectionFilter.Visibility" Value="Collapsed" />
+                        <Setter Target="BackButton.Visibility" Value="Visible" />
+                        <Setter Target="Separator1.Visibility" Value="Collapsed" />
+                        <Setter Target="Separator2.Visibility" Value="Collapsed" />
+                        <Setter Target="BrowseProductsHeader.Margin" Value="0,0,8,20" />
+                        <Setter Target="BrowseProductsHeader.Margin" Value="5,8,8,20" />
+                        <Setter Target="BrowseProductsHeader.FontSize" Value="24"/>
+                        <Setter Target="ProductListingGridView.Margin" Value="-28,10,0,0"/>
+                        <Setter Target="ProductListingGridView.ItemTemplate" Value="{StaticResource ProductsListNarrowItemTemplate}"/>
+                        <Setter Target="ProductListingGridView.(RelativePanel.Below)" Value="BackButton"/>
+                        <Setter Target="TabbedMenuPanel.Margin" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='5' x:Name="NarrowStateView2">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="CategoryList.Visibility" Value="Visible" />
+                        <Setter Target="FilterHeader.Visibility" Value="Visible" />
+                        <Setter Target="ClearSelectionFilter.Visibility" Value="Visible" />
+                        <Setter Target="BackButton.Visibility" Value="Collapsed" />
+                        <Setter Target="Separator1.Visibility" Value="Visible" />
+                        <Setter Target="Separator2.Visibility" Value="Collapsed" />
+                        <Setter Target="ProductListingGridView.Visibility" Value="Collapsed" />
+                        <Setter Target="BrowseProductsHeader.Visibility" Value="Collapsed" />
+                        <Setter Target="TabbedMenuPanel.Margin" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='6' x:Name="MediumState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="450" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="CategoryList.Visibility" Value="Collapsed" />
+                        <Setter Target="FilterHeader.Visibility" Value="Collapsed" />
+                        <Setter Target="ClearSelectionFilter.Visibility" Value="Collapsed" />
+                        <Setter Target="BackButton.Visibility" Value="Visible" />
+                        <Setter Target="Separator1.Visibility" Value="Collapsed" />
+                        <Setter Target="Separator2.Visibility" Value="Collapsed" />
+                        <Setter Target="BrowseProductsHeader.Margin" Value="5,8,8,20" />
+                        <Setter Target="BrowseProductsHeader.FontSize" Value="24"/>
+                        <Setter Target="ProductListingGridView.Margin" Value="-28,10,0,0"/>
+                        <Setter Target="ProductListingGridView.ItemTemplate" Value="{StaticResource ProductsListMediumItemTemplate}"/>
+                        <Setter Target="ProductListingGridView.(RelativePanel.Below)" Value="BackButton"/>
+                        <Setter Target="TabbedMenuPanel.Margin" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ProgressRing x:ConnectionId='7' Name="ProgressRingCtrl" Foreground="Blue" Width="100" Height="100" IsActive="False" 
+                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel x:ConnectionId='8' Name="InternetConnectionStatusPanel" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Orientation="Vertical" Visibility="Collapsed" Height="Auto">
+            <Image Source="ms-appx:///Assets/Symbol_Offline.png" Width="147" Height="147" />
+            <TextBlock x:ConnectionId='25' Name="ErrorTextBlock" HorizontalAlignment="Center" Foreground="Red" FontSize="20" Margin="0,20,0,0"
+                   Style="{StaticResource SubheaderTextBlockStyle}" Visibility="Collapsed" Text="You are not connected to the internet!"/>
+        </StackPanel>
+        <StackPanel x:ConnectionId='9' Name="SettingsPanel" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Top"
+                        HorizontalAlignment="Right" Margin="0,0,10,10" >
+            <Button x:ConnectionId='22' Name ="About" Margin="20,4,0,0" Content="About" Background="WhiteSmoke">
+                <Button.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem x:ConnectionId='23' Text="Privacy Policy"                            />
+                        <MenuFlyoutSeparator/>
+                        <MenuFlyoutItem x:ConnectionId='24' Text="Disclaimer"                         />
+                    </MenuFlyout>
+                </Button.Flyout>
+
+            </Button>
+        </StackPanel>
+        <RelativePanel x:ConnectionId='10' Name="SplitViewRPanel">
+            <StackPanel x:ConnectionId='11' Orientation="Horizontal" Height="40" 
+                                Margin="20,0,10,10" Name="TabbedMenuPanel"
+                                VerticalAlignment="Top">
+                <TextBlock x:ConnectionId='20' Name ="HomeTextBlock" Margin="10,10,0,0" 
+                                                  >Home</TextBlock>
+                <TextBlock x:ConnectionId='21' Name ="CatalogViewTextBlock" Margin="20,10,0,0" 
+                            FontWeight="Medium">Catalog</TextBlock>
+            </StackPanel>
+            <Button x:ConnectionId='12' x:Name="BackButton"
+                    Style="{StaticResource NavigationBackButtonSmallStyle}"
+                    TabIndex="1" RelativePanel.Below="TabbedMenuPanel"
+                    Margin="0,8,0,8"
+                                            
+                    AutomationProperties.Name="Back"
+                    ToolTipService.ToolTip="Back" Visibility="Collapsed"/>
+            <TextBlock x:ConnectionId='13' Text="Product Categories" Style="{StaticResource TitleTextBlockStyle}" 
+                       Margin=" 30,10,0,20" Name="FilterHeader" RelativePanel.Below="TabbedMenuPanel"></TextBlock>
+            <Button x:ConnectionId='14' Name="ClearSelectionFilter" RelativePanel.RightOf="FilterHeader" 
+                    RelativePanel.Below="TabbedMenuPanel" Margin="0,10,0,0"
+                    FontSize="18" FontFamily="Segoe MDL2 Assets" Content="&#59579;"
+                     Width="40" Height="40" Background="Transparent"
+                                                        ></Button>
+            <Line x:ConnectionId='15' X1="0" Y1="0"   X2="216" Y2="0" Name="Separator1" 
+                  Stroke="Gray" StrokeThickness="1"
+                  RelativePanel.Below="FilterHeader" Margin="30,0,5,0"></Line>
+            <TextBlock x:ConnectionId='16' Text="Browse Products" Style="{StaticResource SubheaderTextBlockStyle}" 
+                       RelativePanel.RightOf="CategoryList" 
+                       Margin="20,-0.4,20,20" Name="BrowseProductsHeader" 
+                       RelativePanel.Below="TabbedMenuPanel" HorizontalAlignment="Right" Width="236"></TextBlock>
+            <ListView x:ConnectionId='17' Name="CategoryList" Width="216" MinHeight="120" Margin=" 30,10,20,20" 
+                      RelativePanel.Below="Separator1" IsItemClickEnabled="True" RelativePanel.RightOf="BackButton"
+                      ItemTemplate="{StaticResource NarrowListItemTemplate}" 
+                      ItemContainerStyle="{StaticResource CategoryFilterListViewItemStyle}" 
+                                                        >
+            </ListView>
+            <Line x:ConnectionId='18' X1="0" Y1="0"   X2="0" Y2="750" Name="Separator2" 
+                  Stroke="Gray" StrokeThickness="1" RelativePanel.RightOf="CategoryList"
+                  RelativePanel.Below="TabbedMenuPanel" Margin="0,0,5,0"></Line>
+            <GridView x:ConnectionId='19' ItemTemplate="{StaticResource ProductsListDefaultItemTemplate}" Name="ProductListingGridView" 
+                      IsItemClickEnabled="True" RelativePanel.Below="BrowseProductsHeader"
+                      RelativePanel.RightOf="CategoryList" Margin="15,0,0,0"
+                                                                  >
+                <!--<GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VariableSizedWrapGrid Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>-->
+            </GridView>
+
+        </RelativePanel>
+    </Grid>
+
+</Page>
+

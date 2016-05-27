@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SRIKSANK</Machine>
+    <WindowsUser>sansri</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Release|x86</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>3765ea21-7db2-4e51-a6f0-907793730325</PackageIdentityName>
+    <IntermediateOutputPath>C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\obj\x86\Release\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>371B2352EE4AC6E5C9DF5144F94131D763531BF29C5DC39BC66AEF8BD12ADD30</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>15228SrikantanS.MicrosoftProductsPortfolio_19.1.1.0_x86__dzrj4zpxnxb1t</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>15228SrikantanS.MicrosoftProductsPortfolio_dzrj4zpxnxb1t!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>15228SrikantanS.MicrosoftProductsPortfolio</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=7356A9E0-08D3-4A48-A311-A3CA384D26B5</RegisteredPackagePublisher>
+    <RegisteredVersion>19.1.1.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-05-02T16:44:02.686</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\ApplicationInsights.config">
+      <PackagePath>ApplicationInsights.config</PackagePath>
+      <Modified>2016-04-30T17:18:16.310</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\Icon_AllProducts.png">
+      <PackagePath>Assets\Icon_AllProducts.png</PackagePath>
+      <Modified>2016-05-02T06:33:02.915</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\Icon_AzureServices.PNG">
+      <PackagePath>Assets\Icon_AzureServices.PNG</PackagePath>
+      <Modified>2016-05-02T06:33:04.546</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\ImageCustomerStories.PNG">
+      <PackagePath>Assets\ImageCustomerStories.PNG</PackagePath>
+      <Modified>2016-04-30T03:24:49.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\ImageMSDN.PNG">
+      <PackagePath>Assets\ImageMSDN.PNG</PackagePath>
+      <Modified>2016-04-30T03:24:51.202</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\ImagePreview.png">
+      <PackagePath>Assets\ImagePreview.png</PackagePath>
+      <Modified>2016-04-30T03:24:50.264</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\ImageSupport.PNG">
+      <PackagePath>Assets\ImageSupport.PNG</PackagePath>
+      <Modified>2016-04-30T03:24:50.432</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\ImageTechnet.PNG">
+      <PackagePath>Assets\ImageTechnet.PNG</PackagePath>
+      <Modified>2016-04-30T03:24:50.479</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2015-09-20T11:52:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-04-30T03:24:50.702</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-05-02T13:29:39.564</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-05-02T13:35:53.050</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-05-02T13:42:10.997</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-05-02T13:44:35.236</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-05-02T13:38:37.157</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\Symbol_Offline.PNG">
+      <PackagePath>Assets\Symbol_Offline.PNG</PackagePath>
+      <Modified>2016-05-02T12:42:24.393</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-05-02T13:36:32.556</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\ClrCompression.dll">
+      <PackagePath>ClrCompression.dll</PackagePath>
+      <Modified>2015-07-22T17:38:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\ProductPortfolioUWPApp.dll">
+      <PackagePath>ProductPortfolioUWPApp.dll</PackagePath>
+      <Modified>2016-05-02T16:44:01.724</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\ProductPortfolioUWPApp.exe">
+      <PackagePath>ProductPortfolioUWPApp.exe</PackagePath>
+      <Modified>2016-05-02T16:44:02.654</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2016-05-02T16:43:01.090</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\_Resources\0.rsrc">
+      <PackagePath>_Resources\0.rsrc</PackagePath>
+      <Modified>2016-05-02T16:43:29.009</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\x86\Release\ilc\_Resources\index.txt">
+      <PackagePath>_Resources\index.txt</PackagePath>
+      <Modified>2016-05-02T16:43:29.012</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.2\1.2\">
+      <Name>Microsoft.NET.Native.Framework.1.2</Name>
+      <Version>1.2.23231.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.2, MinVersion = 1.2.23231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.2\1.2\.\arm\ret\Native\Microsoft.NET.Native.Framework.1.2.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.2\1.2\">
+      <Name>Microsoft.NET.Native.Framework.1.2</Name>
+      <Version>1.2.23231.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.2, MinVersion = 1.2.23231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.2\1.2\.\x64\ret\Native\Microsoft.NET.Native.Framework.1.2.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.2\1.2\">
+      <Name>Microsoft.NET.Native.Framework.1.2</Name>
+      <Version>1.2.23231.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.2, MinVersion = 1.2.23231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.2\1.2\.\x86\ret\Native\Microsoft.NET.Native.Framework.1.2.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
+      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
+      <Version>1.1.23406.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.1.23406.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\ARM\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
+      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
+      <Version>1.1.23406.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.1.23406.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\x64\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
+      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
+      <Version>1.1.23406.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.1.23406.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\x86\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.23816.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.23816.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\ARM\Microsoft.VCLibs.ARM.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.23816.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.23816.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x64\Microsoft.VCLibs.x64.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.23816.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.23816.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x86\Microsoft.VCLibs.x86.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

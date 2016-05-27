@@ -1,0 +1,79 @@
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\csc.exe
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\System.Collections.Immutable.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\vbc.exe
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\VBCSCompiler.exe
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\roslyn\VBCSCompiler.exe.config
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\Antlr3.Runtime.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.Helpers.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.Mvc.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.Optimization.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.Razor.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.WebPages.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\WebGrease.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.Helpers.xml
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.Mvc.xml
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.Optimization.xml
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.Razor.xml
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.WebPages.xml
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.xml
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\Antlr3.Runtime.pdb
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\obj\Release\WebApplication1.dll
+C:\Solution Files\temp project dump\WebApplication1\WebApplication1\obj\Release\WebApplication1.pdb
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\csc.exe
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\System.Collections.Immutable.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\vbc.exe
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\VBCSCompiler.exe
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\roslyn\VBCSCompiler.exe.config
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\WebApplication1.dll.config
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\WebApplication1.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\WebApplication1.pdb
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\Antlr3.Runtime.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.Helpers.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.Mvc.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.Optimization.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.Razor.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.WebPages.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.WebPages.Razor.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\WebGrease.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.Helpers.xml
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.Mvc.xml
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.Optimization.xml
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.Razor.xml
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.WebPages.xml
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\System.Web.WebPages.Razor.xml
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\Antlr3.Runtime.pdb
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\obj\Release\WebApplication1.dll
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\obj\Release\WebApplication1.pdb
+C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioAppWebSite\WebApplication1\obj\Release\ProductPortfolioAppWebSite.csprojResolveAssemblyReference.cache

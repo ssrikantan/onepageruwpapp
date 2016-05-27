@@ -1,0 +1,3 @@
+MainPackage=C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\ARM\Release\ProductPortfolioUWPApp_19.1.1.0_ARM.appx
+SymbolPackage=C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\AppPackages\ProductPortfolioUWPApp_19.1.1.0_Test\ProductPortfolioUWPApp_19.1.1.0_ARM.appxsym
+ResourcePack=C:\Solution Files\MyStore Apps\ProductPortfolioUWPApp\ProductPortfolioUWPApp\ProductPortfolioUWPApp\bin\ARM\Release\ProductPortfolioUWPApp_19.1.1.0_scale-100.appx
